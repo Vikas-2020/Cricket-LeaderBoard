@@ -1,0 +1,226 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(to right, #1e3c72, #2a5298);
+    color: white;
+}
+
+#wrapper {
+    width: 90%;
+    max-width: 900px;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 2rem;
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    transition: all 0.3s ease-in-out;
+}
+
+#wrapper:hover {
+    transform: translateY(-5px);
+}
+
+.heading {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #ffcc00;
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+#bg-color {
+    width: 100%;
+    padding: 2rem;
+    border-radius: 1.5rem;
+    background: rgba(255, 255, 255, 0.15);
+    box-shadow: 0 5px 15px rgba(255, 255, 255, 0.2);
+}
+
+.entries form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.value {
+    width: 22%;
+    height: 3rem;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 1rem;
+    font-weight: 600;
+    color: white;
+    outline: none;
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    border: none;
+    transition: all 0.3s ease-in-out;
+    box-shadow: inset 0 3px 6px rgba(255, 255, 255, 0.2);
+}
+
+.value::placeholder {
+    text-align: center;
+    font-size: 1rem;
+    color: rgb(220, 220, 220);
+}
+
+.value:hover {
+    background: linear-gradient(135deg, #2575fc, #6a11cb);
+}
+
+.value:focus {
+    border: 2px solid #ffcc00;
+    box-shadow: 0 0 12px rgba(255, 204, 0, 0.8);
+}
+
+/* Dropdown Styling */
+select.value {
+    appearance: none;
+    padding: 0 1rem;
+    cursor: pointer;
+}
+
+option {
+    color: black;
+}
+
+option:disabled {
+    color: rgb(255, 0, 0);
+}
+
+/* Button Styling */
+.value1 {
+    width: 22%;
+    height: 3rem;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-weight: 700;
+    color: white;
+    background: linear-gradient(135deg, #ffcc00, #ff8800);
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 6px 20px rgba(255, 204, 0, 0.5);
+}
+
+.value1:hover {
+    background: linear-gradient(135deg, #ff8800, #ffcc00);
+    transform: scale(1.08);
+}
+
+/* Leaderboard Styling */
+.leaderboard {
+    width: 100%;
+    margin-top: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.parent {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    width: 90%;
+    font-size: 1.2rem;
+    color: white;
+    padding: 0.9rem 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.4);
+    transition: all 0.3s ease-in-out;
+}
+
+.parent:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 7px 14px rgba(0, 0, 0, 0.6);
+}
+
+/* Action Buttons */
+.actions {
+    display: flex;
+    gap: 1rem;
+}
+
+.actions span {
+    cursor: pointer;
+    font-size: 1.3rem;
+    transition: transform 0.2s ease-in-out;
+}
+
+.actions span:hover {
+    transform: scale(1.2);
+    color: #ffcc00;
+}
+
+/* Hide number input arrows */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+
+/* Responsive Design */
+@media (max-width: 890px) {
+    #wrapper{
+        width: 95%;
+        padding: 1rem;
+    }
+    .heading{
+        font-size: 1.5rem;
+    }
+    #bg-color{
+        padding: 1rem;
+    }
+    .value, .value1{
+        width: 18%;
+        font-size: 13px;
+    }
+    .value::placeholder {
+        font-size: 13px;
+    }
+    .parent{
+        font-size: 13px;
+    }
+    .actions span{
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 630px){
+    .value, .value1{
+        width: 40%;
+    }
+}
+@media (max-width: 460px){
+    .parent{
+        font-size: 11px;
+        padding-left: 7px;
+        padding-right: 7px;
+    }
+    .actions span{
+        font-size: 11px;
+    }
+    .value, .value1{
+        width: 70%;
+    }
+}
