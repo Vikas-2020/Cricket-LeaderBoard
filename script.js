@@ -57,7 +57,9 @@ function printLeaderBoard(){
     const fragment = document.createDocumentFragment();
     leaderBoard.forEach((obj) =>{
         const parent = document.createElement("div");
+        const nameandDate = document.createElement("span");
         const name = document.createElement("p");
+        const date = document.createElement("p");
         const country = document.createElement("p");
         const score = document.createElement("p");
         const actions = document.createElement("p");
@@ -66,10 +68,14 @@ function printLeaderBoard(){
         const minus5 = document.createElement("span");
 
         parent.classList.add("parent");
+        nameandDate.classList.add("name-date");
         actions.classList.add("actions");
         name.innerText = `${obj.fname} ${obj.lname}`;
         country.innerText = `${obj.country}`;
         score.innerText = `${obj.score}`;
+        date.innerText = new Date().toLocaleDateString();
+
+        date.style.fontSize = "13px";
 
         del.classList.add("fa-solid", "fa-trash");
         plus5.innerText = "+5";
@@ -79,10 +85,11 @@ function printLeaderBoard(){
         plus5.addEventListener("click", () => modifyScore(obj.id, "+"));
         minus5.addEventListener("click", () => modifyScore(obj.id, "-"));
         
-        
+        nameandDate.append(name,date);
+
         actions.append(del, plus5, minus5);
         
-        parent.append(name, country, score, actions);
+        parent.append(nameandDate, country, score, actions);
         fragment.append(parent);
     })
     leaderboardDiv.append(fragment);
